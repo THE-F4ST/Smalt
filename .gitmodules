@@ -1,0 +1,3 @@
+[submodule "Smalt/vendor/spdlog"]
+	path = Smalt/vendor/spdlog
+	url = https://github.com/gabime/spdlog

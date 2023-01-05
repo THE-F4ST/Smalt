@@ -1,8 +1,8 @@
 #pragma once
 
 // For use by Smalt application
-#include <stdio.h>
 #include "Smalt/Application.h"
+#include "Smalt/Log.h"
 
 
 // ------- Entry Point -------
