@@ -4,6 +4,9 @@
     <Filter Include="Smalt">
       <UniqueIdentifier>{46621A0E-B276-42BF-7BF8-E51EE7CB3EF0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Smalt\Events">
+      <UniqueIdentifier>{6A03CE85-5666-5D2A-FFEB-95E0EB2D29AD}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Smalt.h" />
@@ -16,9 +19,22 @@
     <ClInclude Include="src\Smalt\EntryPoint.h">
       <Filter>Smalt</Filter>
     </ClInclude>
+    <ClInclude Include="src\Smalt\Events\ApplicationEvent.h">
+      <Filter>Smalt\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Smalt\Events\Event.h">
+      <Filter>Smalt\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Smalt\Events\KeyEvent.h">
+      <Filter>Smalt\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Smalt\Events\MouseEvent.h">
+      <Filter>Smalt\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\Smalt\Log.h">
       <Filter>Smalt</Filter>
     </ClInclude>
+    <ClInclude Include="src\stpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Smalt\Application.cpp">
@@ -27,5 +43,6 @@
     <ClCompile Include="src\Smalt\Log.cpp">
       <Filter>Smalt</Filter>
     </ClCompile>
+    <ClCompile Include="src\stpch.cpp" />
   </ItemGroup>
 </Project>

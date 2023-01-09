@@ -4,7 +4,6 @@
 #include "Smalt/Application.h"
 #include "Smalt/Log.h"
 
-
 // ------- Entry Point -------
 #include "Smalt/EntryPoint.h"
 // ---------------------------

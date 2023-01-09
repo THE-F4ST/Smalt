@@ -18,6 +18,9 @@ project "Smalt"
 	targetdir("bin/" .. outputdir .. "/%{prj.name}")
 	objdir("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "stpch.h"
+	pchsource "Smalt/src/stpch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",

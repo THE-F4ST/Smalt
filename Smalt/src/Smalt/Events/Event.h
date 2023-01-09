@@ -1,10 +1,7 @@
 #pragma once
 
+#include <stpch.h>
 #include "Smalt/Core.h"
-
-#include <string>
-#include <functional>
-
 
 namespace Smalt {
 
