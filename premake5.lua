@@ -1,20 +1,14 @@
 workspace "Smalt"
 	architecture "x64"
 
-	configurations{
+	configurations
+	{
 		"Debug",
 		"Release",
 		"Dist"
 	}
 
 outputdir = "%{cfg.buildcfg}-%{cfg.sysyem}-%{cfg.architecture}"
-
-
---Include directories relative to root folder (solution directory)
-IncludeDir = {}
-IncludeDir["GLFW"] = "Smalt/vendor/GLFW/include"
-
-include "Smalt/vendor/GLFW"
 
 project "Smalt"
 	location "Smalt"
@@ -27,20 +21,16 @@ project "Smalt"
 	pchheader "stpch.h"
 	pchsource "Smalt/src/stpch.cpp"
 
-	files{
+	files
+	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp"
 	}
 
-	includedirs{
+	includedirs
+	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
-	}
-
-	links{
-		"GLFW",
-		"opengl32.lib"
+		"%{prj.name}/vendor/spdlog/include"
 	}
 
 	filter "system:windows"
@@ -48,12 +38,14 @@ project "Smalt"
 		staticruntime "On"
 		systemversion "latest"
 
-		defines{
+		defines
+		{
 			"ST_PLATFORM_WINDOWS",
 			"ST_BUILD_DLL"
 		}
 
-		postbuildcommands{
+		postbuildcommands
+		{
 			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
 		}
 
@@ -78,7 +70,8 @@ project "Sandbox"
 	targetdir("bin/" .. outputdir .. "/%{prj.name}")
 	objdir("bin-int/" .. outputdir .. "/%{prj.name}")
 
-	files{
+	files
+	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp"
 	}
@@ -99,7 +92,8 @@ project "Sandbox"
 		staticruntime "On"
 		systemversion "latest"
 
-		defines{
+		defines
+		{
 			"ST_PLATFORM_WINDOWS"
 		}
 
