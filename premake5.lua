@@ -10,6 +10,12 @@ workspace "Smalt"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.sysyem}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "Smalt/vendor/GLFW/include"
+
+include "Smalt/vendor/GLFW"
+
+
 project "Smalt"
 	location "Smalt"
 	kind "SharedLib"
@@ -30,7 +36,14 @@ project "Smalt"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
